@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Drinks | Savora Kitchen</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg student-navbar">
+        <div class="container">
+
+            <a class="navbar-brand brand-logo" href="student.html">
+                <i class="bi bi-egg-fried"></i>
+                <span>Savora Kitchen</span>
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#studentNavbar"
+                aria-controls="studentNavbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="studentNavbar">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="student.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="meals.html">Meals</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="desseert.html">Desserts</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="drinks.html">Drinks</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="orders.html">My Orders</a>
+                    </li>
+
+                </ul>
+
+                <div class="navbar-actions">
+
+                    <a href="cart.html" class="cart-nav-link">
+                        <i class="bi bi-bag"></i>
+                        <span>Cart</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+
+                    <button class="btn logout-btn" id="studentLogout">
+                        <i class="bi bi-box-arrow-right"></i>
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- DRINKS PAGE -->
+    <main class="container category-page">
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="category-hero drinks-hero">
+
+            <div class="category-hero-content">
+
+                <span class="section-eyebrow">REFRESH YOUR DAY</span>
+
+                <h1>
+                    Fresh drinks,<br>
+                    <span>better moments.</span>
+                </h1>
+
+                <p>
+                    Explore refreshing juices, smoothies, bottled water
+                    and other drinks to keep you refreshed throughout
+                    your campus day.
+                </p>
+
+                <a href="#drinksMenu" class="btn primary-btn">
+                    Explore Drinks
+                    <i class="bi bi-arrow-down"></i>
+                </a>
+
+            </div>
+
+            <div class="category-hero-image">
+
+                <img
+                    src="./images (3).jfif"
+                    alt="Refreshing colourful drinks">
+
+            </div>
+
+        </section>
+
+
+        <!-- DRINK SEARCH -->
+        <section class="category-search-section">
+
+            <div class="category-search-box">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    id="categorySearch"
+                    placeholder="Search juice, smoothies, soft drinks...">
+
+                <button type="button" id="categorySearchButton">
+                    Search
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- DRINKS MENU -->
+        <section class="menu-section" id="drinksMenu">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-eyebrow">SIP SOMETHING GOOD</span>
+
+                    <h2>Explore Our Drinks</h2>
+
+                    <p class="section-description">
+                        Find refreshing beverages from our campus
+                        food vendors.
+                    </p>
+
+                </div>
+
+                <div class="menu-result-count">
+                    <i class="bi bi-grid"></i>
+                    <span>Drinks Collection</span>
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTS WILL BE LOADED USING JAVASCRIPT -->
+            <div class="row g-4" id="categoryProducts" data-category="Drinks">
+
+                <!-- Drink products will appear here automatically. -->
+
+            </div>
+
+
+            <!-- EMPTY SEARCH RESULT MESSAGE -->
+            <div id="emptyCategoryMessage" class="empty-category-message" hidden>
+
+                <i class="bi bi-search"></i>
+
+                <h3>No drinks found</h3>
+
+                <p>
+                    We couldn't find a drink matching your search.
+                    Try another search.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DRINKS INFORMATION BANNER -->
+        <section class="category-info-banner">
+
+            <div class="category-info-icon">
+                <i class="bi bi-cup-straw"></i>
+            </div>
+
+            <div>
+
+                <h3>Stay refreshed throughout the day.</h3>
+
+                <p>
+                    Choose your favourite drink, add it to your
+                    cart and place your order.
+                </p>
+
+            </div>
+
+            <a href="cart.html" class="btn primary-btn">
+                View Cart
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="student-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <a href="student.html" class="brand-logo">
+                    <i class="bi bi-egg-fried"></i>
+                    <span>Savora Kitchen</span>
+                </a>
+
+                <p>Every Bite, an Experience.</p>
+
+                <span class="footer-copy">
+                    &copy; 2026 Savora Kitchen. All rights reserved.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

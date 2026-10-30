@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vendor Dashboard | Savora Kitchen</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body vendor-body">
+
+    <!-- VENDOR NAVIGATION -->
+    <nav class="navbar navbar-expand-lg student-navbar">
+        <div class="container">
+
+            <a class="navbar-brand brand-logo" href="vendor.html">
+                <i class="bi bi-egg-fried"></i>
+                <span>Savora Kitchen</span>
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#vendorNavbar"
+                aria-controls="vendorNavbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="vendorNavbar">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#vendorOverview">
+                            Overview
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vendorProducts">
+                            My Products
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#addProductSection">
+                            Add Product
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vendorOrders">
+                            Orders
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="navbar-actions">
+
+                    <span class="vendor-account-label">
+                        <i class="bi bi-shop"></i>
+                        Food Vendor
+                    </span>
+
+                    <button class="btn logout-btn" id="vendorLogout">
+                        <i class="bi bi-box-arrow-right"></i>
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- MAIN VENDOR CONTENT -->
+    <main class="container vendor-dashboard">
+
+        <!-- WELCOME SECTION -->
+        <section class="vendor-welcome" id="vendorOverview">
+
+            <div>
+
+                <span class="section-eyebrow">VENDOR MANAGEMENT CENTRE</span>
+
+                <h1>
+                    Welcome to your<br>
+                    <span>Vendor Dashboard.</span>
+                </h1>
+
+                <p>
+                    Manage your food products, receive student orders
+                    and grow your business with Savora Kitchen.
+                </p>
+
+            </div>
+
+            <div class="vendor-welcome-icon">
+                <i class="bi bi-shop-window"></i>
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD STATISTICS -->
+        <section class="vendor-statistics">
+
+            <div class="row g-4">
+
+                <div class="col-12 col-sm-6 col-lg-3">
+
+                    <div class="vendor-stat-card">
+
+                        <div class="vendor-stat-top">
+                            <span>Total Products</span>
+
+                            <div class="vendor-stat-icon">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                        </div>
+
+                        <h2 id="vendorTotalProducts">0</h2>
+
+                        <p>Products in your menu</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-lg-3">
+
+                    <div class="vendor-stat-card">
+
+                        <div class="vendor-stat-top">
+                            <span>Available Products</span>
+
+                            <div class="vendor-stat-icon available-icon">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                        </div>
+
+                        <h2 id="vendorAvailableProducts">0</h2>
+
+                        <p>Currently available</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-lg-3">
+
+                    <div class="vendor-stat-card">
+
+                        <div class="vendor-stat-top">
+                            <span>Total Orders</span>
+
+                            <div class="vendor-stat-icon orders-icon">
+                                <i class="bi bi-receipt"></i>
+                            </div>
+                        </div>
+
+                        <h2 id="vendorTotalOrders">0</h2>
+
+                        <p>Orders received</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-lg-3">
+
+                    <div class="vendor-stat-card">
+
+                        <div class="vendor-stat-top">
+                            <span>Pending Orders</span>
+
+                            <div class="vendor-stat-icon pending-icon">
+                                <i class="bi bi-clock-history"></i>
+                            </div>
+                        </div>
+
+                        <h2 id="vendorPendingOrders">0</h2>
+
+                        <p>Orders awaiting action</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD PRODUCT SECTION -->
+        <section class="vendor-section" id="addProductSection">
+
+            <div class="vendor-section-heading">
+
+                <div>
+                    <span class="section-eyebrow">GROW YOUR MENU</span>
+                    <h2>Add a New Product</h2>
+
+                    <p>
+                        Upload your food, drinks or desserts for students
+                        to discover and order.
+                    </p>
+                </div>
+
+                <div class="vendor-heading-icon">
+                    <i class="bi bi-plus-circle"></i>
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT FORM -->
+            <div class="vendor-form-card">
+
+                <form id="productForm">
+
+                    <!-- Hidden product ID for editing -->
+                    <input type="hidden" id="productId">
+
+
+                    <div class="row g-4">
+
+                        <!-- PRODUCT NAME -->
+                        <div class="col-12 col-md-6">
+
+                            <label for="productName" class="form-label">
+                                Product Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="productName"
+                                placeholder="e.g. Jollof Rice and Chicken"
+                                required>
+
+                        </div>
+
+
+                        <!-- PRODUCT CATEGORY -->
+                        <div class="col-12 col-md-6">
+
+                            <label for="productCategory" class="form-label">
+                                Product Category
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="productCategory"
+                                required>
+
+                                <option value="">Select a category</option>
+                                <option value="Meals">Meals</option>
+                                <option value="Desserts">Desserts</option>
+                                <option value="Drinks">Drinks</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- PRODUCT PRICE -->
+                        <div class="col-12 col-md-6">
+
+                            <label for="productPrice" class="form-label">
+                                Product Price (₦)
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">₦</span>
+
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="productPrice"
+                                    placeholder="Enter product price"
+                                    min="1"
+                                    step="1"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PRODUCT AVAILABILITY -->
+                        <div class="col-12 col-md-6">
+
+                            <label for="productAvailability" class="form-label">
+                                Product Availability
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="productAvailability"
+                                required>
+
+                                <option value="Available">Available</option>
+                                <option value="Unavailable">Unavailable</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- PRODUCT DESCRIPTION -->
+                        <div class="col-12">
+
+                            <label for="productDescription" class="form-label">
+                                Product Description
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                id="productDescription"
+                                rows="4"
+                                placeholder="Describe your product..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <!-- PRODUCT IMAGE -->
+                        <div class="col-12">
+
+                            <label for="productImage" class="form-label">
+                                Upload Product Image
+                            </label>
+
+                            <div class="product-upload-area">
+
+                                <div class="upload-icon">
+                                    <i class="bi bi-cloud-arrow-up"></i>
+                                </div>
+
+                                <h4>Upload your product picture</h4>
+
+                                <p>
+                                    Choose an image from your phone or computer.
+                                </p>
+
+                                <input
+                                    type="file"
+                                    class="form-control"
+                                    id="productImage"
+                                    accept="image/*">
+
+                                <small>
+                                    Select a clear picture of your product.
+                                </small>
+
+                                <div id="productImagePreviewContainer" hidden>
+
+                                    <img
+                                        id="productImagePreview"
+                                        src=""
+                                        alt="Product image preview">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- FORM BUTTONS -->
+                        <div class="col-12">
+
+                            <div class="vendor-form-actions">
+
+                                <button
+                                    type="submit"
+                                    class="btn primary-btn"
+                                    id="publishProductButton">
+
+                                    <i class="bi bi-cloud-upload"></i>
+                                    Publish Product
+
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-light"
+                                    id="resetProductForm">
+
+                                    Clear Form
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- VENDOR PRODUCT MANAGEMENT -->
+        <section class="vendor-section" id="vendorProducts">
+
+            <div class="vendor-section-heading">
+
+                <div>
+                    <span class="section-eyebrow">YOUR FOOD COLLECTION</span>
+
+                    <h2>Manage Your Products</h2>
+
+                    <p>
+                        View, edit, delete or update the availability
+                        of products in your menu.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT SEARCH AND FILTER -->
+            <div class="vendor-product-controls">
+
+                <div class="vendor-search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="search"
+                        id="vendorProductSearch"
+                        placeholder="Search your products...">
+
+                </div>
+
+
+                <select
+                    class="form-select"
+                    id="vendorCategoryFilter">
+
+                    <option value="all">All Categories</option>
+                    <option value="Meals">Meals</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Drinks">Drinks</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PRODUCTS WILL APPEAR HERE -->
+            <div class="row g-4" id="vendorProductsContainer">
+
+                <!-- JavaScript will display vendor products here. -->
+
+            </div>
+
+
+            <!-- EMPTY PRODUCTS MESSAGE -->
+            <div id="emptyVendorProducts" class="empty-category-message" hidden>
+
+                <i class="bi bi-box-seam"></i>
+
+                <h3>No products available</h3>
+
+                <p>
+                    You haven't published any products yet.
+                    Use the form above to add your first product.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VENDOR ORDERS -->
+        <section class="vendor-section" id="vendorOrders">
+
+            <div class="vendor-section-heading">
+
+                <div>
+
+                    <span class="section-eyebrow">CUSTOMER ORDERS</span>
+
+                    <h2>Manage Incoming Orders</h2>
+
+                    <p>
+                        Review student orders and update their progress.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ORDER FILTER -->
+            <div class="vendor-order-controls">
+
+                <label for="vendorOrderFilter" class="form-label">
+                    Filter Orders
+                </label>
+
+                <select class="form-select" id="vendorOrderFilter">
+
+                    <option value="all">All Orders</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="Preparing">Preparing</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                    <option value="Rejected">Rejected</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- INCOMING ORDERS WILL APPEAR HERE -->
+            <div id="vendorOrdersContainer">
+
+                <!-- JavaScript will display incoming orders here. -->
+
+            </div>
+
+
+            <!-- EMPTY ORDERS MESSAGE -->
+            <div id="emptyVendorOrders" class="empty-category-message" hidden>
+
+                <i class="bi bi-receipt"></i>
+
+                <h3>No orders received yet</h3>
+
+                <p>
+                    Student orders will appear here when they
+                    place orders for your products.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VENDOR INFORMATION -->
+        <section class="vendor-info-banner">
+
+            <div class="vendor-info-icon">
+                <i class="bi bi-lightbulb"></i>
+            </div>
+
+            <div>
+
+                <h3>Keep your menu updated.</h3>
+
+                <p>
+                    Remember to update product availability when
+                    an item is sold out so students always see
+                    accurate information.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="student-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <a href="vendor.html" class="brand-logo">
+                    <i class="bi bi-egg-fried"></i>
+                    <span>Savora Kitchen</span>
+                </a>
+
+                <p>Every Bite, an Experience.</p>
+
+                <span class="footer-copy">
+                    &copy; 2026 Savora Kitchen. All rights reserved.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CUSTOM JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
